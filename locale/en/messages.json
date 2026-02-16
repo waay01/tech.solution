@@ -175,6 +175,9 @@
     "tabSitl": {
         "message" : "SITL"
     },
+    "tabCustomPage": {
+        "message" : "customPage"
+    },
     "sitlDemoMode": {
         "message": "Demo Mode"
     },

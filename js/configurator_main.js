@@ -189,6 +189,10 @@ $(function() {
                             require('./../tabs/sitl')
                             TABS.sitl.initialize(content_ready);
                             break;
+                        case 'customPage':
+                            require('./../tabs/customPage')
+                            TABS.customPage.initialize(content_ready);
+                            break;    
                         case 'auxiliary':
                             require('./../tabs/auxiliary')
                             TABS.auxiliary.initialize(content_ready);
