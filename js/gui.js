@@ -25,7 +25,7 @@ var GUI_control = function () {
         'mission_control',
         'sitl',
         'help',
-        'customPage'
+        'solutions'
     ];
     this.defaultAllowedTabsWhenConnected = [
         'failsafe',

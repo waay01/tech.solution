@@ -175,8 +175,8 @@
     "tabSitl": {
         "message" : "SITL"
     },
-    "tabCustomPage": {
-        "message" : "customPage"
+    "tabSolutions": {
+        "message" : "solutions"
     },
     "sitlDemoMode": {
         "message": "Demo Mode"
@@ -6182,7 +6182,13 @@
     "currentLanguage": {
         "message": "en"
     },
-   "search": {
+    "search": {
         "message": "Search"
+    },
+    "osd": {
+        "message": "OSD"
+    },
+    "sensors": {
+        "message": "SENSORS"
     }
 }

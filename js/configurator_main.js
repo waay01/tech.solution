@@ -11,6 +11,8 @@ const Store = require('electron-store');
 const store = new Store();
 
 const { GUI, TABS } = require('./gui');
+window.TABS = TABS; 
+window.GUI = GUI;
 const CONFIGURATOR = require('./data_storage');
 const FC = require('./fc');
 const { globalSettings, UnitType } = require('./globalSettings');
@@ -136,7 +138,7 @@ $(function() {
 
                 var tab = tabClass.substring(4);
                 var tabName = $(self).text();
-
+                
                 if (tabRequiresConnection && !CONFIGURATOR.connectionValid) {
                     GUI.log(i18n.getMessage('tabSwitchConnectionRequired'));
                     return;
@@ -146,7 +148,7 @@ $(function() {
                     GUI.log(i18n.getMessage('tabSwitchWaitForOperation'));
                     return;
                 }
-
+                
                 if (GUI.allowedTabs.indexOf(tab) < 0) {
                     GUI.log(i18n.getMessage('tabSwitchUpgradeRequired', [tabName]));
                     return;
@@ -188,11 +190,11 @@ $(function() {
                         case 'sitl':
                             require('./../tabs/sitl')
                             TABS.sitl.initialize(content_ready);
+                            break; 
+                        case 'solutions':
+                            require('./../tabs/solutions')
+                            TABS.solutions.initialize(content_ready);
                             break;
-                        case 'customPage':
-                            require('./../tabs/customPage')
-                            TABS.customPage.initialize(content_ready);
-                            break;    
                         case 'auxiliary':
                             require('./../tabs/auxiliary')
                             TABS.auxiliary.initialize(content_ready);
@@ -288,7 +290,7 @@ $(function() {
                         case 'search':
                             require('./../tabs/search');
                             TABS.search.initialize(content_ready);
-                            break;
+                            break;   
                         default:
                             console.log('Tab not found:' + tab);
                     }
